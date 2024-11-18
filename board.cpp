@@ -25,3 +25,14 @@ char Board::get_mark(int i)
 {
   return this->moves.at(i - 1);
 }
+
+bool Board::is_empty(int move)
+{
+  // Validate move index
+  if (move < 1 || move > 9)
+  {
+    return false;
+  }
+
+  return this->moves[move - 1] >= '1' && this->moves[move - 1] <= '9';
+}

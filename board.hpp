@@ -1,5 +1,4 @@
 #pragma once
-
 #include <array>
 
 class Board
@@ -11,4 +10,5 @@ public:
   void clear();
   void move(int i, char m);
   char get_mark(int i);
+  bool is_empty(int move);
 };
