@@ -15,9 +15,13 @@ void Board::clear()
 
 void Board::move(int i, char m)
 {
-  if (i > 0 && i < 10)
+  if (i > 0 && i < 10 && is_empty(i))
   {
     this->moves[i - 1] = m;
+  }
+  else
+  {
+    std::cout << "Invalid move. The cell is already occupied or out of range." << std::endl;
   }
 }
 
@@ -28,7 +32,6 @@ char Board::get_mark(int i)
 
 bool Board::is_empty(int move)
 {
-  // Validate move index
   if (move < 1 || move > 9)
   {
     return false;
